@@ -1,11 +1,3 @@
-//
-//  PresentViewController.swift
-//  RxSwiftiOS
-//
-//  Created by Marin Todorov on 1/21/17.
-//  Copyright © 2017 Underplot ltd. All rights reserved.
-//
-
 import UIKit
 import RxSwift
 import RxCocoa

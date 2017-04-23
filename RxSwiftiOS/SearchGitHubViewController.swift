@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  RxSwiftiOS
-//
-//  Created by Marin Todorov on 1/21/17.
-//  Copyright © 2017 Underplot ltd. All rights reserved.
-//
-
 import UIKit
 import Unbox
 
@@ -19,6 +11,7 @@ class SearchGitHubViewController: UIViewController {
 
     private let bag = DisposeBag()
     private let repos = Variable<[Repo]>([])
+    private let presenter = SearchPresenter(SearchManager())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,36 +19,24 @@ class SearchGitHubViewController: UIViewController {
     }
 
     func bindUI() {
-        // observe text, form request, bind table view to result
         searchBar.rx.text
             .orEmpty
             .filter { query in
                 return query.characters.count > 2
             }
             .debounce(0.5, scheduler: MainScheduler.instance)
-            .map { query in
-                var apiUrl = URLComponents(string: "https://api.github.com/search/repositories")!
-                apiUrl.queryItems = [URLQueryItem(name: "q", value: query)]
-                return URLRequest(url: apiUrl.url!)
+            .flatMapLatest{ query -> Observable<[Repo]> in
+                return self.presenter.getRepos(query)
             }
-            .flatMapLatest { request in
-                return URLSession.shared.rx.json(request: request)
-                    .catchErrorJustReturn([])
-            }
-            .map { json -> [Repo] in
-                guard let json = json as? [String: Any],
-                    let items = json["items"] as? [[String: Any]]  else {
-                        return []
-                }
-                return items.flatMap(Repo.init)
-            }
-
             .bindTo(tableView.rx.items) { tableView, row, repo in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-                cell.textLabel!.text = repo.name
+                let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+                let user : String = (repo.username) != nil ? repo.username! : ""
+                cell.textLabel!.text = String(row) + "-" + repo.name + " (by: " + user + ")"
                 cell.detailTextLabel?.text = repo.language
+
                 return cell
             }
             .addDisposableTo(bag)
     }
+
 }
