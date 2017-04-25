@@ -19,6 +19,7 @@
 		9C941A6B1E34AF15006DB1FE /* SourceControlAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C941A6A1E34AF15006DB1FE /* SourceControlAPI.swift */; };
 		9C941A6D1E34B1D9006DB1FE /* UnidirectionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C941A6C1E34B1D9006DB1FE /* UnidirectionalViewController.swift */; };
 		9C941A6F1E34B284006DB1FE /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C941A6E1E34B284006DB1FE /* Update.swift */; };
+		C471A9348D889CB86C03041E /* ResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C471A6D3AC50740212611369 /* ResultSet.swift */; };
 		D9EFD24EE46472AD4C3814F2 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFD56EAC5F6D720378EBCA /* SearchManager.swift */; };
 		D9EFDB49EB44E54A3F9B81F3 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFD298AAA14069145983EB /* SearchPresenter.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		9C941A6C1E34B1D9006DB1FE /* UnidirectionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnidirectionalViewController.swift; sourceTree = "<group>"; };
 		9C941A6E1E34B284006DB1FE /* Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		A1BBBBAB7C049E850CA78160 /* Pods-RxSwiftiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftiOS/Pods-RxSwiftiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C471A6D3AC50740212611369 /* ResultSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSet.swift; sourceTree = "<group>"; };
 		C49D8FF82AB94B7479F3BC23 /* Pods_RxSwiftiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D713662B95F31539A6E7266E /* Pods-RxSwiftiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftiOS/Pods-RxSwiftiOS.release.xcconfig"; sourceTree = "<group>"; };
 		D9EFD298AAA14069145983EB /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				9C4F3ECF1E338FE500B6428E /* Repo.swift */,
 				D9EFD298AAA14069145983EB /* SearchPresenter.swift */,
 				D9EFD56EAC5F6D720378EBCA /* SearchManager.swift */,
+				C471A6D3AC50740212611369 /* ResultSet.swift */,
 			);
 			name = SearchGitHub;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				9C8C1A841E33620B00A6AF51 /* AppDelegate.swift in Sources */,
 				D9EFDB49EB44E54A3F9B81F3 /* SearchPresenter.swift in Sources */,
 				D9EFD24EE46472AD4C3814F2 /* SearchManager.swift in Sources */,
+				C471A9348D889CB86C03041E /* ResultSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
